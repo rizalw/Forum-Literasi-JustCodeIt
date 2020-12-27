@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='icon' href="{{ url_for('static', filename = 'image/Logo.ico') }}" type='image/x-icon' >
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/base.css') }}">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="item">
+                <span>
+                    <a href="/">
+                        <img src="{{ url_for('static', filename = 'image/Logo.png') }}" alt="" id = "navbar_logo">
+                    </a>
+                    <a href="/">
+                        <h2>Forum Literasi Just Code It</h2>
+                    </a>
+                </span>
+            </div>
+            <div class="item">
+                <span class="middle">
+                    <h2><a href="/">Beranda</a></h2>
+                    <h2><a href="/category">Kategori</a></h2>
+                    <h2><a href="/about-us">Tentang Kami</a></h2>
+                </span>
+            </div>
+            <div class="item">
+                <span>
+                    <a href="/login" class="login"><h3>Masuk</h3></a>
+                </span>
+            </div>
+        </div>
+        <p class="parabuat_artikel"><a href="/create" class="buat_artikel">Buat Artikel</a></p>
+        {% block body %}{% endblock %}
+        <div class="footer">
+            <p>@Copyright 2020</p>
+        </div>
+    </body>
+</html>

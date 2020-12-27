@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/author_article.css') }}">
+<title>Author Article</title>
+{% endblock %}
+
+{% block body %}
+<h2 class="nama_author">Penulis: {{ name }}</h2>
+<div class="container">
+{% for x in data %}
+<div class="item1">
+    <a href="/article/{{x.id}}-{{x.judul}}">
+        <img src="{{ url_for('static', filename = 'image/{}.png'.format(x.id)) }}" alt="" class="image_detail_category">
+    </a>
+    <a href="/article/{{x.id}}-{{x.judul}}" class="judul">{{x.judul}}</a>
+    {% if x.kategori == "User-Interface User-Experience" %}
+    {% set a = "UI/UX" %}
+    <div>Kategori: <a href="/category/{{ x.kategori }}" class="link_penulis">{{a}}</a></div>
+    {% else%}
+    <div>Kategori: <a href="/category/{{ x.kategori }}" class="link_penulis">{{x.kategori}}</a></div>
+    {% endif %}
+</div>    
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+
+{% block head %}
+<title>Kategori</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/category.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="category">
+        <img src="{{ url_for('static', filename = 'image/webdev.png') }}" alt="">
+        <a href="/category/Web-Development">Web Development</a>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename = 'image/mobiledev.png') }}" alt="">
+        <a href="/category/Mobile-Development">Mobile Development</a>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename = 'image/data.jpg') }}" alt="">
+        <a href="/category/Data">Data</a>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename = 'image/uiux.png') }}" alt="">
+        <a href="category/User-Interface User-Experience">UI/UX</a>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename = 'image/jaringan.png') }}" alt="">
+        <a href="category/Computer-Network">Computer Network</a>
+    </div>
+    <div class="category">
+        <img src="{{ url_for('static', filename = 'image/probis.png') }}" alt="">
+        <a href="category/Business-Process">Business Process</a>
+    </div>
+</div>
+{% endblock %}

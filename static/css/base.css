@@ -1,0 +1,91 @@
+html{
+    overflow-y:scroll;
+}
+
+body{
+    margin: 0 10px 60px 10px;
+    font-family: serif, sans-serif;
+    background-color: #f9ffa1;
+    padding-bottom: 10px;
+}
+.navbar{
+    display: flex;
+    background-color: #fc6404;
+    margin: -10px;
+    padding:  0 5px;
+}
+#navbar_logo{
+    width: 70px;
+    height: 70px;
+}
+
+.navbar .item{
+    display: flex;
+    align-items: center;
+}
+.navbar .item span>*{
+    color: white;
+    margin: 0 5px;
+}
+.item{
+    flex: 1;
+}
+.item span{
+    display: flex;
+    justify-content: center;
+}
+.middle{
+    margin: 0 auto;
+}
+.item:first-child>span{
+    margin-right: auto; 
+}
+.item:last-child>span{
+    margin-left: auto; 
+}
+.item span a{
+    text-decoration: none;
+}
+.item span h2 a{
+    text-decoration: none;
+    color: white;
+}
+.item span .login{
+    text-decoration: none;
+    color:  #fc6404;
+    border-radius:15px;
+    line-height: 0;
+    padding: 0 10px;
+    background-color: white;
+}
+.item span .login:hover{
+    background-color:#dfdfdf;
+    transition: 0.5s;
+}
+.buat_artikel{
+    text-decoration: none;
+    background-color:  #fc6404;
+    border-radius:15px;
+    color: white;
+    padding: 3px 10px;
+}
+.buat_artikel:hover{
+    transition: 0.5s;
+    background-color: #c74c00;
+}
+.parabuat_artikel{
+    text-align: right;
+    padding-bottom: 6px;
+    border-bottom: 5px solid #fc6404;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fc6404 ;
+    text-align: center;
+    color: white;
+    line-height: 0;
+}
+

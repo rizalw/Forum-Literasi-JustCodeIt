@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css') }}">
+<title>Update</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form action="/update/{{ data.id }}" method = 'POST' class="form_input">
+        <label for="nama_penulis">Nama Penulis</label><br>
+        <input type="nama_penulis" id="nama_penulis" name="nama_penulis" value="{{ data.penulis }}"><br>  
+
+        <label for="judul">Judul</label><br>
+        <input type="text" id="judul" name="judul" value="{{data.judul}}"><br>
+
+        <label for="kategori">Kategori</label><br>
+        <p>Pilihanmu sebelumnya adalah: {{ data.kategori}}</p>
+        <select id="kategori" name="kategori">
+            <option value="Web Development">Web Development</option>
+            <option value="Mobile Development">Mobile Development</option>
+            <option value="Data">Data</option>
+            <option value="User-Interface User-Experience">UI/UX</option>
+            <option value="Computer Network">Computer Network</option>
+            <option value="Business Process">Business Process</option>
+        </select><br>
+
+        <label for="artikel">Artikel</label><br>
+        <textarea id="artikel" name="artikel" rows = "20" cols = "200">{{data.isi_artikel}}</textarea><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+.category{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #fc6404;
+    background-color: #fc6404;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.category a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+.category a:hover{
+    text-decoration: underline;
+}
+.category img{
+    width: 300px;
+}

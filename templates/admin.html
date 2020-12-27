@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Beranda</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+<table border="1" style="margin-top: 50px;">
+    <tr>
+        <th>ID</th>
+        <td>Penulis</td>
+        <td>Judul</td>
+        <td>Kategori</td>
+        <td>Tanggal diupload</td>
+        <td>Aksi</td>
+    </tr>
+    {% for datum in data %}
+    <tr>
+        <td>{{ datum.id }}</td>
+        <td>{{ datum.penulis }}</td>
+        <td>{{ datum.judul }}</td>
+        <td>{{ datum.kategori }}</td>
+        <td>{{ datum.date_created }}</td>
+        <td><img src="static/image/{{ datum.id }}.png" alt="" class = "main_picture"></td>
+        <td>
+            <a href="/update/{{ datum.id }}">Update</a>
+            <a href="/delete/{{ datum.id }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

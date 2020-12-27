@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/article.css') }}">
+<title>Artikel</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="full_article">
+        <img src="{{ url_for('static', filename = 'image/{}.png'.format(data.id)) }}" alt="" class="main_picture">
+        <h1>{{data.judul}}</h1>
+        <small>
+            Kategori: 
+            <a href="/category/{{ data.kategori }}" class="link">
+                {% if data.kategori == "User-Interface User-Experience" %}
+                {% set a = "UI/UX" %}
+                {{a}}
+                {% else %}
+                {{ data.kategori}}
+                {% endif %}
+            </a>
+            <br>oleh 
+            <a href="/author/{{ data.penulis }}" class="link">{{data.penulis}}</a>
+            <br>{{ data.date_created.strftime('%d/%m/%Y, %H:%M')}}
+        </small>
+        {% set a = data.isi_artikel.split("\r\n\r\n") %}
+        {% for x in a %}
+        <div class="detail">
+            {{x}}
+            <br><br>    
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

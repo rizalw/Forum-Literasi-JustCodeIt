@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Beranda</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="outer_container_article">
+        {% if data|length < 1 %}
+        <h2 style="text-align: center;">Tidak ada data</h2>
+        {% else %}
+        {% for datum in data %}
+        {% set judul = "-".join(datum.judul.split()) %}
+        <div class="inner_container">
+            <img src="static/image/{{ datum.id }}.png" alt="" class="main_picture">
+            <div class="short_article">
+                <h1>
+                    <a href="/article/{{datum.id}}-{{judul}}">{{datum.judul}}</a>
+                    <br>
+                    {% if datum.kategori == "User-Interface User-Experience"%}
+                    {% set a = "UI/UX"%}
+                    <small class="kategori">Kategori: <a href="/category/{{datum.kategori }}">{{ a }}</a></small>
+                    {% else%}
+                    <small class="kategori">Kategori: <a href="/category/{{datum.kategori }}">{{ datum.kategori }}</a></small>
+                    {% endif%}
+                    <br>
+                    <small class = "penulis">oleh <a href="/author/{{ datum.penulis }}">{{ datum.penulis }}</a></small>
+                </h1>
+                <p class="date_uploaded">{{ datum.date_created.strftime('%d/%m/%Y, %H:%M')}}</p>
+                {% set kumpulan =  "".join(datum.isi_artikel.split("\n\n")) %}
+                {% set singkat =  kumpulan[:300] %}
+                <div class="main_article">
+                        {{ singkat }}
+                    ... <a href="article/{{datum.id}}-{{judul}}">Baca selengkapnya</a> 
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+</div>
+{% endblock %}

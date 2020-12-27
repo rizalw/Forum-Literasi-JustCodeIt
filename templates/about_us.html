@@ -1,0 +1,29 @@
+{% extends "base.html" %}   
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/about_us.css') }}">
+<title>Tentang Kami</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="jci_mean">
+        <img src="{{ url_for('static', filename = 'image/Logo.ico') }}" alt="" class="logo_about-us">
+        <div class="mean">
+            Apa itu JCI?<br><br>
+            JCI (Just Code It) adalah Sebuah komunitas baru yang baru saja berdiri pada bulan Agustus 2020 oleh<br>
+            beberapa mahasiswa S1 Sistem Informasi Angakatan 2018 dan 2019.<br>
+            Komunitas ini berfokus pada pengembangan di bidang akademis<br>
+            khususnya di bidang pemrograman.
+        </div>
+    </div>
+    <div class="visi_misi">
+        <div class="visi">
+            <h2>Visi (Coming Soon)</h2>
+        </div>
+        <div class="misi">
+            <h2>Misi (Coming Soon)</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
